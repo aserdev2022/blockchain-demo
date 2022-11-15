@@ -1,16 +1,18 @@
-**Activate the vritual enviroment**
+# Activate the virtual environment
+
+my py3 is in the virtual-env and my pakages
 
 ````
-$ ~ => source /home/[yourname]/[your project]/etc/blockchain-env/bin/activate
+$ ~ => source blockchain-demo/bin/activate
 ````
 
-**install all packages**
+# install all packages
 
 ````
-$~ => pip3 install -r /home/[your name]/[the project]/requirments.txt
+$~ => pip3 install -r requirments.txt
 ````
 
-**get ready for the download**
+# get ready for the download
 
 **1- install python3**
 
@@ -94,7 +96,7 @@ $~ => python3 -m pytest backend/tests
 
 ```
 
-**Run the application and API**
+#Run the application and API
 
 Make sure to activate the virtual environment.
 
@@ -102,7 +104,7 @@ Make sure to activate the virtual environment.
 $~ => python3 -m backend.app
 ````
 
-**Run a peer instance**
+# Run a peer instance
 
 Make sure to activate the virtual environment.
 
@@ -110,14 +112,14 @@ Make sure to activate the virtual environment.
 $~ => export PEER=True && python3 -m backend.app
 ````
 
-**Run the frontend**
+# Run the frontend
 
 In the frontend directory:
 ````
 $~ => npm run start
 ````
 
-**Seed the backend with data**
+# Seed the backend with data
 
 Make sure to activate the virtual environment.
 
@@ -125,3 +127,42 @@ Make sure to activate the virtual environment.
 $~ => export SEED_DATA=True && python3 -m backend.app
 ````
 
+# best tips for py3 projects
+
+**make a venv before running any project**
+
+```
+$~ => python3 -m venv [name your venv] 
+```
+
+**activate it**
+
+```
+$~ => source [your venv]/bin/activate
+```
+
+**add some tests!**
+
+tests help you to discover some bugs in your projects and try some code before you add it to the app
+
+**1- install pytest**
+
+```
+$~ => pip3 install pytest==7.2.0
+```
+
+**2- create some tests**
+
+create a file called 'test_[the thing you want to test].py'
+
+
+
+now to run the test
+
+```
+$~ => python3 -m pytest
+```
+
+now if you see a error that means there is a bug or problem in your project
+
+if you see 'test passed' that means that your project is fine
