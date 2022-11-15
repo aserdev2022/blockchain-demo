@@ -1,5 +1,6 @@
 import time
 
+from  crypto_hash import crypto_hash
 
 
 class Block:
@@ -17,10 +18,11 @@ class Block:
     def __repr__(self):
         return (
             'Block('
-            f'data: {self.data},'
+            
             f'hash: {self.hash},'
             f'last_hash: {self.last_hash},'
-            f'timestamp: {self.timestamp})'
+            f'timestamp: {self.timestamp},'
+            f'data: {self.data},'
         )
 
     @staticmethod
@@ -30,7 +32,7 @@ class Block:
         """
         timestamp = time.time_ns()
         last_hash = last_block.hash
-        hash = f'{timestamp}-{last_hash}'
+        hash = crypto_hash(timestamp, last_hash, data)
         return Block(timestamp, last_hash, hash, data)
 
     @staticmethod
