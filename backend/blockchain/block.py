@@ -1,6 +1,13 @@
 import time
 
-from  backend.util.crypto_hash import crypto_hash
+from backend.util.crypto_hash import crypto_hash
+
+GENESIS_DATA = {
+    'timestamp': 1,
+    'last_hash': 'genesis_last_hash',
+    'hash': 'genesis_hash',
+    'data': []
+}
 
 
 class Block:
@@ -9,7 +16,7 @@ class Block:
     store transactions in a blockchain that supports a cryptocurrency.
     """
 
-    def __init__(self, timestamp, hash, last_hash, data, ):
+    def __init__(self, timestamp, last_hash, hash, data):
         self.data = data
         self.timestamp = timestamp
         self.hash = hash
@@ -18,7 +25,6 @@ class Block:
     def __repr__(self):
         return (
             'Block('
-            
             f'hash: {self.hash},'
             f'last_hash: {self.last_hash},'
             f'timestamp: {self.timestamp},'
@@ -33,6 +39,7 @@ class Block:
         timestamp = time.time_ns()
         last_hash = last_block.hash
         hash = crypto_hash(timestamp, last_hash, data)
+
         return Block(timestamp, last_hash, hash, data)
 
     @staticmethod
@@ -40,8 +47,14 @@ class Block:
         """
         Generate the genesis block.
         """
-        return Block(1, 'genesis_last_hash', 'genesis_hash', [])
+        # return Block(
+        #     timestamp=GENESIS_DATA['timestamp'],
+        #     last_hash=GENESIS_DATA['last_hash'],
+        #     hash=GENESIS_DATA['hash'],
+        #     data=GENESIS_DATA['data']
+        # )
 
+        return Block(**GENESIS_DATA)
 
 
 def main():

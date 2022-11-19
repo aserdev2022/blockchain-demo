@@ -1,6 +1,6 @@
 # Activate the virtual environment
 
-my py3 is in the virtual-env and my pakages
+my py3 interpreter is in the virtual-env and my pakages
 
 ````
 $ ~ => source blockchain-demo/bin/activate
@@ -96,7 +96,7 @@ $~ => python3 -m pytest backend/tests
 
 ```
 
-#Run the application and API
+# Run the application and API
 
 Make sure to activate the virtual environment.
 
@@ -163,6 +163,99 @@ now to run the test
 $~ => python3 -m pytest
 ```
 
-now if you see a error that means there is a bug or problem in your project
+now if you see an error that means there is a bug or problem in your project
 
 if you see 'test passed' that means that your project is fine
+
+
+# set up pycharm for python
+
+**first install pycharm ide**
+
+```
+$~ => apt install snapd
+```
+
+```
+$~ => snap install pycharm-community --classic
+```
+
+or
+
+```
+https://www.jetbrains.com/pycharm/download/ 
+```
+
+now open pycharm
+
+
+**Install some useful plugins**
+
+**1-Requirements**
+
+this plugin helps you to install requirements.txt packages 
+
+ok to use it open your ide and create a requirements.txt file 
+
+now add any python packages do you want to install
+
+**example: my requirements.txt file**
+```
+pytest==7.2.0
+Kivy~=2.1.0
+pip==22.3.1
+attrs~=22.1.0
+wheel==0.38.4
+docutils~=0.19
+pluggy~=1.0.0
+exceptiongroup~=1.0.1
+iniconfig~=1.1.1
+pyparsing~=3.0.9
+setuptools==65.5.1
+Flask==2.2.2
+pubnub==7.0.1
+requests==2.28.1
+cryptography==38.0.3
+Flask-Cors==3.0.10
+```
+
+**now to install the packages**
+
+```
+$~ => pip3 install -r requirements.txt
+```
+
+now wait for it to install
+
+# some important notes
+
+if you see the '$~ =>' in my commands that means that iam using bash
+
+**if you want to use and install bash in windows**
+
+
+****
+
+```
+https://git-scm.com/downloads
+```
+
+and install git
+
+in the installer select 'install git bash'
+
+or
+
+install unix environments
+
+
+**note:macos or linux has bash built in to use it open the terminal**
+
+
+
+
+
+
+
+
+# iam sorry for the long description -_-
